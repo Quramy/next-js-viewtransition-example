@@ -1,24 +1,31 @@
-/*
 @keyframes slidein {
   from {
-    transform: translateX(100%);
+    transform: var(--translate-new);
   }
 }
 @keyframes slideout {
   to {
-    transform: translateX(-100%);
+    transform: var(--translate-old);
   }
 }
 
-::view-transition-new(mainTransition) {
+::view-transition-group(.normalTransition) {
+  --translate-new: translateX(100%);
+  --translate-old: translateX(-100%);
+}
+::view-transition-group(.reverseTransition) {
+  --translate-new: translateX(-100%);
+  --translate-old: translateX(100%);
+}
+
+::view-transition-new(.mainTransition) {
   z-index: 1;
   animation: slidein 0.7s both;
 }
-::view-transition-old(mainTransition) {
+::view-transition-old(.mainTransition) {
   z-index: 0;
   animation: slideout 0.7s both;
 }
-*/
 
 .main {
   padding: 32px 0;
@@ -50,4 +57,8 @@
 
 /* workaround for tcm */
 .mainTransition {
+}
+.normalTransition {
+}
+.reverseTransition {
 }
