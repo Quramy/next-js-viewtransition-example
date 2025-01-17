@@ -25,7 +25,7 @@ export default function SlideLayout({
           none: direction == null,
         })}
       >
-        <section>{children}</section>
+        {children}
       </ViewTransition>
       <Pagenator />
     </main>

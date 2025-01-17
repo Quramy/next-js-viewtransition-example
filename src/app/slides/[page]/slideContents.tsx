@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+
 export const contents = [
   {
     title: "Agenda",

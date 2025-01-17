@@ -32,27 +32,6 @@
   display: grid;
   height: 100dvh;
   grid-template-rows: 1fr min-content;
-
-  & > nav {
-    padding: 0 32px;
-    width: 100%;
-    display: flex;
-    & > span {
-      text-align: center;
-      flex: 0 0 100px;
-    }
-    & > a {
-      flex: auto;
-    }
-
-    & > :first-child {
-      text-align: left;
-    }
-
-    & > :last-child {
-      text-align: right;
-    }
-  }
 }
 
 /* workaround for tcm */
