@@ -1,31 +1,15 @@
-@keyframes slidein {
-  from {
-    transform: translateX(100%);
-  }
-}
-@keyframes slideout {
-  0% {
-    transform: translateX(0);
-  }
-  15% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-::view-transition-new(slide-page) {
-  z-index: 1;
-  animation: slidein 0.7s both;
-}
-::view-transition-old(slide-page) {
-  z-index: 0;
-  animation: slideout 0.7s both;
+:where(*) {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next", sans-serif;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:where(a, a:visited) {
+  color: #0060e0;
 }

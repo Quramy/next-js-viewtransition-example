@@ -1,20 +1,26 @@
 .module {
-  height: 100dvh;
-  padding: 32px 64px;
-  display: grid;
-  grid-template-rows: min-content 1fr min-content;
 }
 
 .module {
   & header {
     padding-bottom: 16px;
-    border-bottom: 1px solid black;
-    font-size: 32px;
+    border-bottom: 4px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+    font-size: 36px;
     font-weight: 600;
   }
-  & nav {
-    border-top: 1px solid black;
-    padding-top: 16px;
-    display: flex;
+}
+
+.content {
+  margin-top: 24px;
+  font-size: 28px;
+  line-height: 1.8;
+  list-style: inside;
+  & ul ol,
+  & ol ul,
+  & ul ul,
+  & ol ol {
+    margin-left: 2em;
   }
 }
