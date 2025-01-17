@@ -1,0 +1,25 @@
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes slideout {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+::view-transition-new(toggle) {
+  animation: slidein .5s both;
+}
+::view-transition-old(toggle) {
+  animation: slideout .5s both;
+}
+
+.loading {
+  view-transition-name: toggle;
+}
+
+.hello {
+  view-transition-name: toggle;
+}

@@ -4,19 +4,23 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "tcm": "tcm -p \"src/**/*.module.css\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "15.2.0-canary.13",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.0-canary.13"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/react-dom": "^19",
+    "prettier": "^3.4.2",
+    "typed-css-modules": "^0.9.1",
+    "typescript": "^5"
   }
 }
