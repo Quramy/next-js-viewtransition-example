@@ -10,6 +10,13 @@
   box-sizing: border-box;
 }
 
+::view-transition-new(*) {
+  animation: none;
+}
+::view-transition-old(*) {
+  animation: none;
+}
+
 :where(a, a:visited) {
   color: #0060e0;
 }

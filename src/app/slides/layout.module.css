@@ -19,12 +19,13 @@
 }
 
 .main {
-  padding: 32px;
+  padding: 32px 0;
   display: grid;
   height: 100dvh;
   grid-template-rows: 1fr min-content;
 
   & > nav {
+    padding: 0 32px;
     width: 100%;
     display: flex;
     & > span {
