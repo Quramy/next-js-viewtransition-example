@@ -33,11 +33,3 @@
   height: 100dvh;
   grid-template-rows: 1fr min-content;
 }
-
-/* workaround for tcm */
-.mainTransition {
-}
-.normalTransition {
-}
-.reverseTransition {
-}

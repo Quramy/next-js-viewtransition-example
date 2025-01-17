@@ -9,17 +9,15 @@
   }
 }
 
-::view-transition-new(toggle) {
+::view-transition-new(.toggle) {
   animation: slidein 0.5s both;
 }
-::view-transition-old(toggle) {
+::view-transition-old(.toggle) {
   animation: slideout 0.5s both;
 }
 
-.loading {
-  view-transition-name: toggle;
+.hello {
 }
 
-.hello {
-  view-transition-name: toggle;
+.loading {
 }
