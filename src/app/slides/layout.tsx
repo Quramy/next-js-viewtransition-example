@@ -1,29 +1,35 @@
 "use client";
 
 import {
-  unstable_ViewTransition as ViewTransition,
+  unstable_ViewTransition,
   type ReactNode,
+  type FC,
+  type ComponentProps,
 } from "react";
 import clsx from "clsx";
 
 import * as styles from "./layout.module.css";
 import { Pagenator } from "./pagenator";
-import { useNavigationDirection } from "./useNavigationDirection";
+
+// Workaround for @types/react
+const ViewTransition = unstable_ViewTransition as FC<
+  ComponentProps<typeof unstable_ViewTransition> & {
+    default: string | Record<string, string>;
+  }
+>;
 
 export default function SlideLayout({
   children,
 }: {
   readonly children: ReactNode;
 }) {
-  const direction = useNavigationDirection();
   return (
     <main className={styles.main}>
       <ViewTransition
-        className={clsx(styles.mainTransition, {
-          [styles.normalTransition]: direction === "normal",
-          [styles.reverseTransition]: direction === "reverse",
-          none: direction == null,
-        })}
+        default={{
+          "navigation-back": styles.reverseTransition,
+          "navigation-forward": styles.normalTransition,
+        }}
       >
         {children}
       </ViewTransition>

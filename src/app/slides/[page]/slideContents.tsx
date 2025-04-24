@@ -29,10 +29,16 @@ export const contents = [
             </li>
           </ol>
         </li>
-        <li>
+        <li style={{ textDecoration: "line-through" }}>
           Detail:&nbsp;
           <a href="https://github.com/facebook/react/pull/31975">
             https://github.com/facebook/react/pull/31975
+          </a>
+        </li>
+        <li>
+          Detail:&nbsp;
+          <a href="https://react.dev/reference/react/ViewTransition">
+            https://react.dev/reference/react/ViewTransition
           </a>
         </li>
       </ul>
