@@ -1,5 +1,3 @@
-"use client";
-
 import {
   unstable_ViewTransition,
   type ReactNode,
@@ -10,6 +8,7 @@ import clsx from "clsx";
 
 import * as styles from "./layout.module.css";
 import { Pagenator } from "./pagenator";
+import { size } from "./[page]/slideContents";
 
 // Workaround for @types/react
 const ViewTransition = unstable_ViewTransition as FC<
@@ -33,7 +32,7 @@ export default function SlideLayout({
       >
         {children}
       </ViewTransition>
-      <Pagenator />
+      <Pagenator min={1} max={size - 1} />
     </main>
   );
 }

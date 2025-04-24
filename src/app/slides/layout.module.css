@@ -31,7 +31,7 @@
 }
 
 .main {
-  padding: 32px 0;
+  padding: 32px 0 80px;
   display: grid;
   height: 100dvh;
   grid-template-rows: 1fr min-content;

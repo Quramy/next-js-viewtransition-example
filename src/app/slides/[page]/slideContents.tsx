@@ -57,3 +57,5 @@ export const contents = [
   readonly title: string;
   readonly body: ReactNode;
 }[];
+
+export const size = contents.length;

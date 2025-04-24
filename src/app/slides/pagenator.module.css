@@ -1,13 +1,23 @@
 .module {
-  padding: 0 32px;
   width: 100%;
   display: flex;
+
   & > span {
     text-align: center;
-    flex: 0 0 100px;
+    flex: 1 1 auto;
   }
+
   & > a {
-    flex: auto;
+    padding: 0 32px;
+    font-size: larger;
+    flex: 0 0 min-content;
+    transition-property: color;
+    transition: 0.3s;
+  }
+
+  & > a[aria-disabled="true"] {
+    pointer-events: none;
+    color: #e0e0e0;
   }
 
   & > :first-child {
