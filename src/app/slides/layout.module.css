@@ -18,11 +18,14 @@
   --translate-old: translateX(100%);
 }
 
-::view-transition-new(.mainTransition) {
+::view-transition-new(.normalTransition),
+::view-transition-new(.reverseTransition) {
   z-index: 1;
   animation: slidein 0.7s both;
 }
-::view-transition-old(.mainTransition) {
+
+::view-transition-old(.normalTransition),
+::view-transition-old(.reverseTransition) {
   z-index: 0;
   animation: slideout 0.7s both;
 }
