@@ -4,6 +4,10 @@
   font-family: "Avenir Next", sans-serif;
 }
 
+:root {
+  interpolate-size: allow-keywords;
+}
+
 *,
 *::before,
 *::after {

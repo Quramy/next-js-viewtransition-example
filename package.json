@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
     "prettier": "^3.4.2",
     "typed-css-modules": "^0.9.1",
     "typescript": "^5"

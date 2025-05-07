@@ -21,13 +21,13 @@
 ::view-transition-new(.normalTransition),
 ::view-transition-new(.reverseTransition) {
   z-index: 1;
-  animation: slidein 0.7s both;
+  animation: slidein 0.7s;
 }
 
 ::view-transition-old(.normalTransition),
 ::view-transition-old(.reverseTransition) {
   z-index: 0;
-  animation: slideout 0.7s both;
+  animation: slideout 0.7s;
 }
 
 .main {

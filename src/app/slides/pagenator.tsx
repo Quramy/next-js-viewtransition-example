@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect, startTransition } from "react";
+import {
+  useEffect,
+  startTransition,
+  unstable_addTransitionType as addTransitionType,
+} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
-import * as styles from "./pagenator.module.css";
-
-// Workarount for @types/react
-const addTransitionType = require("react").unstable_addTransitionType as (
-  type: string,
-) => unknown;
+import styles from "./pagenator.module.css";
 
 export function Pagenator({ min, max }: { min: number; max: number }) {
   const router = useRouter();

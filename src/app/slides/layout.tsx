@@ -1,5 +1,5 @@
 import {
-  unstable_ViewTransition,
+  unstable_ViewTransition as ViewTransition,
   type ReactNode,
   type FC,
   type ComponentProps,
@@ -10,13 +10,6 @@ import * as styles from "./layout.module.css";
 import { Pagenator } from "./pagenator";
 import { size } from "./[page]/slideContents";
 
-// Workaround for @types/react
-const ViewTransition = unstable_ViewTransition as FC<
-  ComponentProps<typeof unstable_ViewTransition> & {
-    default: string | Record<string, string>;
-  }
->;
-
 export default function SlideLayout({
   children,
 }: {
@@ -26,6 +19,7 @@ export default function SlideLayout({
     <main className={styles.main}>
       <ViewTransition
         default={{
+          default: "auto",
           "navigation-back": styles.reverseTransition,
           "navigation-forward": styles.normalTransition,
         }}

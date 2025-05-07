@@ -1,23 +1,49 @@
-@keyframes slidein {
-  from {
-    transform: translateX(100%);
+.root {
+  padding: 32px;
+
+  & > main {
+    margin-top: 32px;
   }
 }
-@keyframes slideout {
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
   to {
-    transform: translateX(-100%);
+    opacity: 1;
   }
 }
 
 ::view-transition-new(.toggle) {
-  animation: slidein 0.5s both;
+  animation: fadein 0.5s normal;
 }
 ::view-transition-old(.toggle) {
-  animation: slideout 0.5s both;
+  animation: fadein 0.5s reverse;
+}
+
+.hello,
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
 }
 
 .hello {
+  border: 1px solid #b0b0b0;
+  border-radius: 8px;
+  background: #fff;
+  color: #202020;
+  width: 300px;
+  height: 300px;
 }
 
 .loading {
+  border: 1px solid #b0b0b0;
+  color: #fff;
+  border-radius: 8px;
+  background: #e0e0e0;
+  width: 200px;
+  height: 200px;
 }
