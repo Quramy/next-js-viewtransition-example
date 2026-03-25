@@ -1,10 +1,5 @@
 "use client";
 
-import {
-  useEffect,
-  startTransition,
-  unstable_addTransitionType as addTransitionType,
-} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
@@ -15,35 +10,6 @@ export function Pagenator({ min, max }: { min: number; max: number }) {
   const { page } = useParams() as { page: string };
   const pageNum = Number.parseInt(page, 10);
 
-  useEffect(() => {
-    const abortCtrl = new AbortController();
-    window.addEventListener(
-      "keydown",
-      ({ code }) => {
-        switch (code) {
-          case "ArrowLeft": {
-            if (pageNum <= min) return;
-            return startTransition(() => {
-              addTransitionType("navigation-back");
-              router.push(`/slides/${pageNum - 1}`);
-            });
-          }
-          case "ArrowRight": {
-            if (pageNum > max) return;
-            return startTransition(() => {
-              addTransitionType("navigation-forward");
-              router.push(`/slides/${pageNum + 1}`);
-            });
-          }
-          default:
-            break;
-        }
-      },
-      { signal: abortCtrl.signal },
-    );
-    return () => abortCtrl.abort();
-  }, [min, max, pageNum, router]);
-
   if (!page) return null;
   if (Number.isNaN(pageNum)) return null;
 
@@ -52,7 +18,7 @@ export function Pagenator({ min, max }: { min: number; max: number }) {
       <Link
         aria-disabled={pageNum <= min}
         href={`/slides/${pageNum - 1}`}
-        onNavigate={() => addTransitionType("navigation-back")}
+        transitionTypes={["navigation-back"]}
       >
         Prev
       </Link>
@@ -60,7 +26,7 @@ export function Pagenator({ min, max }: { min: number; max: number }) {
       <Link
         aria-disabled={pageNum > max}
         href={`/slides/${pageNum + 1}`}
-        onNavigate={() => addTransitionType("navigation-forward")}
+        transitionTypes={["navigation-forward"]}
       >
         Next
       </Link>

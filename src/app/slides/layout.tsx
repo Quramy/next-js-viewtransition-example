@@ -1,5 +1,5 @@
 import {
-  unstable_ViewTransition as ViewTransition,
+  ViewTransition,
   type ReactNode,
   type FC,
   type ComponentProps,

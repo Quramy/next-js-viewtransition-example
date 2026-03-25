@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useState,
-  useEffect,
-  useTransition,
-  unstable_ViewTransition as ViewTransition,
-} from "react";
+import { useState, useEffect, useTransition, ViewTransition } from "react";
 
 import styles from "./page.module.css";
 
