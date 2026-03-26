@@ -1,9 +1,4 @@
-import {
-  ViewTransition,
-  type ReactNode,
-  type FC,
-  type ComponentProps,
-} from "react";
+import { ViewTransition, type ReactNode } from "react";
 import clsx from "clsx";
 import * as styles from "./layout.module.css";
 import { Pagenator } from "./pagenator";

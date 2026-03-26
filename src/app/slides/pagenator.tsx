@@ -2,8 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import styles from "./pagenator.module.css";
 
 export function Pagenator({ min, max }: { min: number; max: number }) {
