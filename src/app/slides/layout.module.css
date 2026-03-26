@@ -1,33 +1,40 @@
-@keyframes slidein {
+@keyframes slide-in {
   from {
-    transform: var(--translate-new);
+    transform: var(--slide-in-from);
   }
-}
-@keyframes slideout {
   to {
-    transform: var(--translate-old);
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: var(--slide-out-to);
   }
 }
 
-::view-transition-group(.normalTransition) {
-  --translate-new: translateX(100%);
-  --translate-old: translateX(-100%);
+::view-transition-group(.slideLeft) {
+  --slide-in-from: translateX(100%);
+  --slide-out-to: translateX(-100%);
 }
-::view-transition-group(.reverseTransition) {
-  --translate-new: translateX(-100%);
-  --translate-old: translateX(100%);
+::view-transition-new(.slideLeft) {
+  animation: slide-in 0.7s both;
 }
-
-::view-transition-new(.normalTransition),
-::view-transition-new(.reverseTransition) {
-  z-index: 1;
-  animation: slidein 0.7s;
+::view-transition-old(.slideLeft) {
+  animation: slide-out 0.7s both;
 }
 
-::view-transition-old(.normalTransition),
-::view-transition-old(.reverseTransition) {
-  z-index: 0;
-  animation: slideout 0.7s;
+::view-transition-group(.slideRight) {
+  --slide-in-from: translateX(-100%);
+  --slide-out-to: translateX(100%);
+}
+::view-transition-new(.slideRight) {
+  animation: slide-in 0.7s both;
+}
+::view-transition-old(.slideRight) {
+  animation: slide-out 0.7s both;
 }
 
 .main {

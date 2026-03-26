@@ -19,8 +19,8 @@ export default function SlideLayout({
       <ViewTransition
         default={{
           default: "auto",
-          "navigation-back": styles.reverseTransition,
-          "navigation-forward": styles.normalTransition,
+          "navigation-back": styles.slideRight,
+          "navigation-forward": styles.slideLeft,
         }}
       >
         {children}

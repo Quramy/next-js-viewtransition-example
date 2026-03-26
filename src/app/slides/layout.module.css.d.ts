@@ -1,7 +1,7 @@
 declare const styles: {
   readonly "main": string;
-  readonly "normalTransition": string;
-  readonly "reverseTransition": string;
+  readonly "slideLeft": string;
+  readonly "slideRight": string;
   readonly "slidein": string;
   readonly "slideout": string;
 };
